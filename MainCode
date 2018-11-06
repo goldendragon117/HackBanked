@@ -1,0 +1,51 @@
+/*Adam Montijo
+11/6/2018
+Hacking Bank Accounts
+*/
+//files included to run
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;//writing in the the white space
+
+void Normal(float x, float y);//prototype functions called with floats as preameters
+void Hacked(float& x, float& y);//prototype functions called with floats as preameters
+
+int main()//main function
+{
+	float normalBank = 1;//amount in normal bank account
+	float hackedBank = 1000;//amount of Bank of terror
+	cout << "A group of terrorist hacked into the bank accounts" << endl;
+	cout << "of a coffee shop called Joe's Coffee Shop" << endl;
+	cout << "The original bank values" << endl;
+	cout << "We tried to hack into their accounts to get it back" << endl;
+	cout << "This is the accounts now" << endl;
+	cout << "Normal bank account: " << normalBank << endl;
+	cout << "The Bank of Terror amount: " << hackedBank << endl;
+	cout << "Now lets try hacking into it\n" << endl;
+	Normal(normalBank, hackedBank);//passing the float values into the normal function
+	cout << "Normal amount:  " << normalBank << endl;
+	cout << "The Bank of Terror amount: " << hackedBank << endl;
+	cout << "That didn't work lets try something else\n"<< endl;
+	Hacked(normalBank, hackedBank);//passing the float values into the hacked function swapping them
+	cout << "Normal amount: " << normalBank << endl;
+	cout << "The Bank of Terror amount: " << hackedBank << endl;
+	cout << "That'd worked now Joe's Coffee Shop has its' money back" << endl;
+	system("pause");
+	return 0;
+}
+//Normal tranctions no swaping
+void Normal(float x, float y)//no references 
+{
+	int temp = x;//x = tmep
+	x = y;//x = y
+	y = temp;//y = temp
+}
+//Hacked tranctions swapping the values 
+void Hacked(float& x, float& y)//references 
+{
+	int temp = x;//x = tmep
+	x = y;//x = y
+	y = temp;//y = temp
+}
